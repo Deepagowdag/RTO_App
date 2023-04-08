@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTO_App", "RTO_App\RTO_App.csproj", "{A1F09D04-67CF-4DE6-B7D3-77CE5D004EA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1F09D04-67CF-4DE6-B7D3-77CE5D004EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1F09D04-67CF-4DE6-B7D3-77CE5D004EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1F09D04-67CF-4DE6-B7D3-77CE5D004EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1F09D04-67CF-4DE6-B7D3-77CE5D004EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B20096D7-D704-4C1E-BC5A-2C0AC2195474}
+	EndGlobalSection
+EndGlobal

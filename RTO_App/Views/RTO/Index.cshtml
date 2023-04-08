@@ -1,0 +1,90 @@
+﻿@model RTOForm
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RTO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container" style="text-align: center;">
+        <h3 style="color: green;">RTO COMPLIANCE FORM</h3>
+        <br />
+
+        @using (Html.BeginForm())
+        {
+            <div class="col-sm-10">
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="EmployeeID">Employee ID:</label>
+                    <div class="col-sm-5">
+                        @Html.TextBoxFor(x=>x.EmployeeID, new { @class = "form-control",@type = "number", @required  = "required" })
+                    </div>
+                </div>
+
+                <div class="form-group row" style="text-align: left;">
+                    <label class="control-label col-sm-2" for="ComplianceType"><span style="color:red;padding-right: 1px;">*</span>Compliance Type:</label>
+                    <div class="col-sm-5">
+                        @Html.RadioButtonFor(m => m.ComplianceType , "WFH", new{@required  = "required"}) <span> WFH</span><br>
+                        @Html.RadioButtonFor(m => m.ComplianceType , "WFO") <span> WFO</span><br>
+                        @Html.RadioButtonFor(m => m.ComplianceType , "Sick Leave") <span> Sick Leave</span><br>
+                        @Html.RadioButtonFor(m => m.ComplianceType , "Annual Leave") <span> Annual Leave</span><br>
+                        @Html.RadioButtonFor(m => m.ComplianceType , "Bank Holiday") <span> Bank Holiday</span><br>
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="date" style="padding-top: 0;"><span style="color:red;padding-right: 1px;">*</span>Date Range:</label>
+                    <div class="col-sm-5" style="text-align: left;">
+                        <label style="margin-right: 20px;font-weight: 500;"><input type="radio" class="date_type" name="dateRange" value="date" required> Date</label>
+                        <label style="font-weight: 500;"><input type="radio" class="date_type" name="dateRange" value="date_range" required> Weekday Range</label>
+                    </div>
+                </div>
+                <div class="form-group row" style="margin-left: 15.4%;">
+                    <div class="col-sm-3 date_from hidden">@Html.TextBoxFor(x=>x.From, new { @class = "form-control", type = "date" })</div>
+                    <div class="col-sm-3 date_to hidden" style="margin-left: -31px;">@Html.TextBoxFor(x=>x.To, new { @class = "form-control", type = "date"})</div>
+                </div>
+
+                <div class="row col-sm-10">
+                    <input type="submit" value="Submit" class="col-sm-2 btn btn-default" />
+                    <input type="reset" value="Cancel/Reset" class="col-sm-2 btn btn-danger reset" style="margin-left: 15px;" />
+                </div>
+            </div>
+        }
+    </div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.date_type').click(function () {
+            var inputValue = $(this).attr("value");
+            debugger;
+            if (inputValue == "date") {
+                $('.date_from').removeClass('hidden');
+                $('.date_to').addClass('hidden');
+            }
+            else {
+                $('.date_from').removeClass('hidden');
+                $('.date_to').removeClass('hidden');
+            }
+        });
+
+        $('.reset').click(function () {
+            $('.date_from').addClass('hidden');
+            $('.date_to').addClass('hidden');
+        });
+    });
+</script>
+
+

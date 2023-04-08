@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 class="text-center mt-3">Date Range Picker</h1>
+<h6 class="text-center">Read only</h6>
+<input data-start="16/11/2018" data-end="16/12/2018" type="text" name="dates" class="d-block my-4 mx-auto">
+
+
+const self = $('input[name="dates"]')
+
+self.daterangepicker({
+    applyButtonClasses: 'd-none',
+    showDropdowns: false,
+    opens: "center",
+    drops: "down",
+    autoApply: false,
+    startDate: self.data('start'),
+    endDate: self.data('end'),
+    minDate: self.data('start'),
+    maxDate: self.data('end'),
+    locale: {
+      format: "DD/MM/YYYY",
+      separator: " - ",
+      applyLabel: "Aplicar",
+      cancelLabel: "Fechar",
+      fromLabel: "De",
+      toLabel: "Até",
+      customRangeLabel: "Custom",
+      weekLabel: "S",
+      daysOfWeek: [
+       "Dom",
+       "Seg",
+       "Ter",
+       "Qua",
+       "Qui",
+       "Sex",
+       "Sab"
+      ],
+      monthNames: [
+       "Janeiro",
+       "Fevereiro",
+       "Março",
+       "Abril",
+       "Maio",
+       "Junho",
+       "Julho",
+       "Agosto",
+       "Setembro",
+       "Outubro",
+       "Novembro",
+       "Dezembro"
+      ],
+      firstDay: 1
+    }
+  });
